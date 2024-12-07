@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://institutos.ufrrj.br/ice/wp-content/themes/institutomodelo/images/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Institutos de Ciências Exatas - ICE</title>
+    <style>
+      /* Estilos CSS */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #0072c6;
+        color: #fff;
+        padding: 20px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav > ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+      nav > ul > li {
+        position: relative;
+      }
+      nav > ul > li > a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+      nav > ul > li.has-submenu > a::after {
+        content: "▼";
+        font-size: 10px;
+        margin-left: 5px;
+        opacity: 0.5;
+      }
+      nav > ul > li.has-submenu:hover > a::after {
+        opacity: 1;
+      }
+      nav > ul > li:hover > a {
+        background-color: #005a9e;
+      }
+      nav > ul > li > ul {
+        display: none;
+        position: absolute;
+        background-color: #0072c6;
+        width: 200px;
+        list-style-type: none;
+        padding: 0;
+        z-index: 1;
+      }
+      nav > ul > li:hover > ul {
+        display: block;
+      }
+      nav > ul > li > ul > li > a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+      }
+      nav > ul > li > ul > li > a:hover {
+        background-color: #005a9e;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      .section-title {
+        color: #0072c6;
+        font-size: 24px;
+        margin-right: 20px;
+      }
+      .search-box {
+        background-color: #f2f2f2;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+      .search-box input {
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        width: 300px;
+      }
+      .search-box button {
+        background-color: #0072c6;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+      .card {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        position: relative;
+      }
+      .card h2 {
+        font-size: 16px;
+        margin-top: 0;
+      }
+      .card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .card a {
+        color: #007bff;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .card a:hover {
+        text-decoration: underline;
+      }
+      .card .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-size: cover;
+        background-position: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .card .content {
+        margin-top: 90px; /* Aumentar o espaçamento para acomodar a imagem */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .editais {
+        padding: 20px;
+        width: 70%;
+      }
+
+      .edital {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .edital h2 {
+        font-size: 16px;
+        margin-top: 0;
+      }
+
+      .edital p {
+        font-size: 10px;
+        margin-bottom: 5px;
+      }
+
+      footer {
+        background-color: #0072ab;
+        color: #fff;
+        padding: 40px 0;
+        width: 100%;
+        margin: 0;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .fale-conosco,
+      .endereco {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .fale-conosco h2,
+      .endereco h2 {
+        font-size: 22px;
+        margin-top: 0;
+      }
+
+      .fale-conosco p,
+      .endereco p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .credits {
+        font-size: 16px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav style="margin-left: 10%">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li class="has-submenu">
+            <a href="#">INSTITUTO</a>
+            <ul>
+              <li><a href="#">Sobre o Instituto</a></li>
+              <li><a href="#">Estrutura Organizacional</a></li>
+              <li><a href="#">Laboratórios</a></li>
+              <li><a href="#">Grupos de Pesquisa</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">GRADUAÇÃO</a>
+            <ul>
+              <li><a href="#">Cursos Oferecidos</a></li>
+              <li><a href="#">Processo Seletivo</a></li>
+              <li><a href="#">Matrículas</a></li>
+              <li><a href="#">Calendário Acadêmico</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">PÓS-GRADUAÇÃO</a>
+            <ul>
+              <li><a href="#">Mestrado</a></li>
+              <li><a href="#">Doutorado</a></li>
+              <li><a href="#">Especialização</a></li>
+              <li><a href="#">Processo Seletivo</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">ORIENTAÇÃO</a>
+            <ul>
+              <li><a href="#">Orientação Acadêmica</a></li>
+              <li><a href="#">Orientação Profissional</a></li>
+              <li><a href="#">Orientação de Estágio</a></li>
+              <li><a href="#">Orientação de Trabalhos de Conclusão</a></li>
+            </ul>
+          </li>
+          <li><a href="#">FALE CONOSCO</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          background-color: #f5f5f5;
+          height: 159px;
+        "
+      >
+        <div>
+          <h1 class="section-title">INSTITUTOS DE CIÊNCIAS EXATAS - ICE</h1>
+          <h3 style="color: #4772ab">CAMPUS SEROPÉDICA - UFRRJ</h3>
+        </div>
+        <div class="search-box" style="margin-left: 30%">
+          <input type="text" placeholder="Pesquisa..." />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; padding-left: 11%;">
+      <h3>Instituto</h3>
+      <h4 style="font-weight: bold">História</h4>
+      <p>
+        Em 11 de agosto de 1970, o Conselho Universitário da Universidade
+        Federal Rural do Rio de Janeiro (UFRRJ), CONSU, aprovou a indicação do
+        Professor Roberto Alvahydo e de outros professores para promoverem a
+        implantação do export default Instituto de Matemática, Física e Química
+        da UFRRJ.
+      </p>
+      <p>
+        No entanto, já naquela época, funcionavam de forma independente, dois
+        departamentos: O Departamento de Física e Química e o Departamento de
+        Matemática e Estatística. Da mesma forma, já existia também o Curso de
+        Mestrado em Química Orgânica (criado em 1966), que começou praticamente
+        com dois docentes: Otto Richard Gottlieb (coordenador) e W.B. Eyton
+        (oriundo da Universidade de Sheffield), contando com oito alunos.
+      </p>
+
+      <p>
+        Em 22 de junho de 1971, o Professor José Carlos Sena Maia, através do
+        ofício nº 65 (processo nº 0693/71), solicitou a criação do Departamento
+        de Física. Em 08 de dezembro de 1971, o CONSU homologou o pedido
+        (resolução 09/71) e, finalmente, em 10 de março foi eleito o primeiro
+        Chefe de Departamento de Física, sob a organização do Professor Horácio
+        Macedo. De 1972 a 1980, assumiram a direção do antigo Instituto de
+        Matemática, Física e Química, os Professores Roberto Alvahydo, Horácio
+        Macedo e Jamil Correa Mourão.
+      </p>
+
+      <p>
+        Com a aprovação do regimento das Unidades Universitárias da UFRRJ
+        (Deliberação nº 25, de 09/01/1980), o nome do Instituto de Matemática,
+        Física e Química foi alterado para Instituto de Ciências Exatas – ICE.
+      </p>
+
+      <p>
+        Em 1994, foi implantado o curso de Doutorado em Química Orgânica. Em janeiro de 2008, 
+        a CAPES através do OFÍCIO/CAA/Nº 027- 03/2008, aprovou a alteração do nome do Programa, 
+        que passou a ser denominado Programa de Pós-Graduação em Química com três áreas de 
+        concentração (Química Orgânica, Físico-Química e Química Agrária) que reflete as linhas 
+        e projetos de pesquisa, disciplinas e perfil do corpo docente.
+      </p>
+
+      <p>
+        Todas essas transformações são marcos históricos de grande importância para a comunidade. Poucos, talvez, 
+        poderiam prever o desenvolvimento que o antigo Instituto de Matemática, Física e Química alcançaria nos anos 
+        seguintes à sua criação (1970) e, principalmente na virada do milênio, com as interligações dos campos do conhecimento, 
+        a utilização de modernas tecnologias no desenvolvimento de pesquisas de fronteira, na forma de manipulação e transmissão 
+        de informações técnicas e educacionais utilizadas nos Departamentos. 
+      </p>
+
+      <p>
+        O ICE contou com a administração dos Diretores:
+      </p>
+
+      <ul style="list-style: none; padding:  0;" >
+        <li style="font-weight: bold;">Francisco Ademar Costa (1980 – 1982);</li>
+        <li style="font-weight: bold;">Olavo Divino Vieira (1984 – 1986);</li>
+        <li style="font-weight: bold;">Raimundo Braz Filho (1986 – 1990);</li>
+        <li style="font-weight: bold;">Lucio Vitório Iannarella (1990 – 1995);</li>
+        <li style="font-weight: bold;">Silas Varella Faiz Jr. (1994 – 1997);</li>
+        <li style="font-weight: bold;">Eliza Helena de Souza Faria (1997 – 2005);</li>
+        <li style="font-weight: bold;">Miguel Angelo da Silva (2006 – 2008);</li>
+        <li style="font-weight: bold;">Luiz Holender – Pro-tempore – 2008.</li>
+      </ul>
+
+      <p>
+        Atualmente, o ICE encontra-se sob a Direção do Professor João Batista Neves da Costa desde Julho de 2008.
+      </p>
+
+      <small>Postado em  25/01/2011 - 12:01  - Atualizado em 06/10/2014 - 16:42</small>
+    </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="contact-info">
+            <div class="fale-conosco">
+              <h2>Fale Conosco</h2>
+              <p>Contato</p>
+            </div>
+            <div class="endereco">
+              <h2>Endereço</h2>
+              <p>Universidade Federal Rural do Rio de Janeiro</p>
+              <p>BR-465, Km 7 Seropédica-Rio de Janeiro</p>
+              <p>CEP: 23.897-000</p>
+            </div>
+          </div>
+          <div class="credits">© 2011-2024 - UFRRJ | Créditos</div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
